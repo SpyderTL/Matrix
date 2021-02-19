@@ -17,5 +17,10 @@ namespace Matrix
 
 			Processes.Add(new Process { Program = Firmware });
 		}
+
+		public void Wait()
+		{
+			Processes.ForEach(x => x.Wait());
+		}
 	}
 }
