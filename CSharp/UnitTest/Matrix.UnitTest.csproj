@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Matrix\Matrix.csproj" />
+    <ProjectReference Include="..\Matrix\Matrix.csproj" />
   </ItemGroup>
 
 </Project>
