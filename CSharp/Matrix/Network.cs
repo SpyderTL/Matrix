@@ -15,12 +15,12 @@ namespace Matrix
 		{
 			foreach (var adapter in Adapters)
 			{
-				while (adapter.SendPacketQueue.Count != 0)
+				while (adapter.SentPackets.Count != 0)
 				{
-					var packet = adapter.SendPacketQueue.Dequeue();
+					var packet = adapter.SentPackets.Dequeue();
 
 					foreach (var adapter2 in Adapters)
-						adapter2.ReceivePacketQueue.Enqueue(packet);
+						adapter2.ReceivedPackets.Enqueue(packet);
 				}
 			}
 		}

@@ -1,6 +1,15 @@
-﻿namespace Matrix
+﻿using System;
+
+namespace Matrix
 {
-	public class Program
+	public abstract class Program
 	{
+		public virtual void Start(Process process)
+		{
+		}
+
+		public virtual void Wait(Process process)
+		{
+		}
 	}
 }

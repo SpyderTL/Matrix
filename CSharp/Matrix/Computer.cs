@@ -6,8 +6,11 @@ namespace Matrix
 	public class Computer
 	{
 		public List<Device> Devices = new List<Device>();
-		public Program Firmware = new Reference.ReferenceFirmware();
 		public List<Process> Processes = new List<Process>();
+		public Program Firmware = new Reference.ReferenceFirmware();
+
+		public Dictionary<string, string> Properties = new Dictionary<string, string>();
+
 		public bool Running;
 
 		public void Start()
@@ -15,12 +18,25 @@ namespace Matrix
 			if (Running)
 				return;
 
-			Processes.Add(new Process { Program = Firmware });
+			var process = new Process(Firmware, this);
+
+			Processes.Add(process);
+
+			process.Start();
 		}
 
 		public void Wait()
 		{
-			Processes.ForEach(x => x.Wait());
+			foreach (var process in Processes)
+				process.Wait();
+
+			Processes.RemoveAll(x => x.Stopped);
+		}
+
+		public void Stop()
+		{
+			if (!Running)
+				return;
 		}
 	}
 }
