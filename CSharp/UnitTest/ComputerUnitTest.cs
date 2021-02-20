@@ -4,8 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Matrix.UnitTest
 {
 	[TestClass]
-	public class ComputerTest
+	public class ComputerUnitTest
 	{
+		/// <summary>
+		/// https://github.com/SpyderTL/Matrix/wiki/Computer#startup
+		/// </summary>
 		[TestMethod]
 		public void Startup()
 		{

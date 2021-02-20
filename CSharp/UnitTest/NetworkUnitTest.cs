@@ -4,8 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Matrix.UnitTest
 {
 	[TestClass]
-	public class NetworkTest
+	public class NetworkUnitTest
 	{
+		/// <summary>
+		/// https://github.com/SpyderTL/Matrix/wiki/Network#network-packets
+		/// </summary>
 		[TestMethod]
 		public void NetworkPackets()
 		{
