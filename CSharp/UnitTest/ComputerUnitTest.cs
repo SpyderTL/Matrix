@@ -20,10 +20,19 @@ namespace Matrix.UnitTest
 			computer.Start();
 
 			Assert.IsTrue(computer.Processes.Any(x => x.Program == computer.Firmware));
+			Assert.IsTrue(TestFirmware.Started);
 		}
 
 		private class TestFirmware : Program
 		{
+			public static bool Started;
+
+			public override void Start(Process process)
+			{
+				Started = true;
+
+				base.Start(process);
+			}
 		}
 	}
 }

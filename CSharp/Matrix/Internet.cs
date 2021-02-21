@@ -20,7 +20,7 @@ namespace Matrix
 					var packet = gateway.SentPackets.Dequeue();
 
 					foreach (var gateway2 in Gateways)
-						if (string.Equals(packet.DestinationDomain, gateway2.Domain, StringComparison.InvariantCultureIgnoreCase))
+						if (gateway2 == packet.DestinationGateway)
 							gateway2.ReceivedPackets.Enqueue(packet);
 				}
 			}

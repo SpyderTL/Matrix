@@ -7,7 +7,7 @@ namespace Matrix
 	{
 		public List<Device> Devices = new List<Device>();
 		public List<Process> Processes = new List<Process>();
-		public Program Firmware = new Reference.ReferenceFirmware();
+		public Program Firmware = new Reference.Firmware();
 
 		public Dictionary<string, string> Properties = new Dictionary<string, string>();
 

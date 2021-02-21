@@ -10,11 +10,8 @@ namespace Matrix
 
 		public NetworkAdapter NetworkAdapter = new NetworkAdapter();
 
-		public string Domain;
-
-		public InternetGateway(string domain)
+		public InternetGateway()
 		{
-			Domain = domain;
 		}
 
 		public void Wait()
@@ -24,7 +21,7 @@ namespace Matrix
 				var packet = NetworkAdapter.ReceivedPackets.Dequeue();
 
 				if (packet is InternetPacket internetPacket &&
-					internetPacket.DestinationDomain != Domain)
+					internetPacket.DestinationGateway != this)
 						SentPackets.Enqueue(internetPacket);
 			}
 

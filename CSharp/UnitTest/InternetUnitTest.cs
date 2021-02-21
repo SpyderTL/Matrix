@@ -14,13 +14,13 @@ namespace Matrix.UnitTest
 		{
 			var internet = new Internet();
 
-			var gateway = new InternetGateway("domain.com");
-			var gateway2 = new InternetGateway("domain2.com");
+			var gateway = new InternetGateway();
+			var gateway2 = new InternetGateway();
 
 			internet.Gateways.Add(gateway);
 			internet.Gateways.Add(gateway2);
 
-			var packet = new InternetPacket { DestinationDomain = "domain2.com" };
+			var packet = new InternetPacket { DestinationGateway = gateway2 };
 
 			gateway.NetworkAdapter.ReceivedPackets.Enqueue(packet);
 

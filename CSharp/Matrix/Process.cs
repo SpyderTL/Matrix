@@ -37,6 +37,8 @@ namespace Matrix
 			Started = true;
 
 			Program.Start(this);
+
+			Running = true;
 		}
 	}
 }

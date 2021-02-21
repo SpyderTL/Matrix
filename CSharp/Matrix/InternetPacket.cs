@@ -2,7 +2,7 @@
 {
 	public class InternetPacket : NetworkPacket
 	{
-		public string SourceDomain;
-		public string DestinationDomain;
+		public InternetGateway SourceGateway;
+		public InternetGateway DestinationGateway;
 	}
 }
